@@ -11,7 +11,7 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="styl
 <body>
     <nav class="bg-green-100 p-3 flex items-center justify-between shadow-xl sticky top-0 z-10">
         <h1 class="text-2xl">Greenden</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:hidden">
+        <svg id="menuicon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cursor-pointer md:hidden">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 </svg>
 
@@ -27,11 +27,27 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="styl
             </li>
         </ul>
     </nav>
+     <div id="sidenav" class="bg-green-100 fixed z-20  top-0 transition-all duration-1000 "  style="width:50%; height: 100vh; right: -50%;">
+        <div id="closenav" class="text-right p-4">
+            <p class="inline cursor-pointer ">X</p>
+        </div>
+         <ul class="flex flex-col gap-10 items-center text-grey-600 ">
+            <li>
+                <a class="hover:underline hover:text-black" href="index.html">Home</a>
+            </li>
+            <li>
+                <a  class="hover:underline hover:text-black" href="product.html">Products</a>
+            </li>
+            <li>
+                <a  class="hover:underline hover:text-black" href="contact.html">Contact</a>
+            </li>
+        </ul>
+     </div>
     <section class="text-center">
         
         <h1 class="font-bold text-3xl mt-10 ">Our Products</h1>
-        <input type="text" placeholder="Search for Products" class="border border-black p-3 mt-5 rounded " style="width: 80%;">
-    <div class="grid grid-cols-2 gap-5 mt-10 md:grid-cols-4 ">
+        <input id="searchbar" type="text" placeholder="Search for Products" class="border border-black p-3 mt-5 rounded " style="width: 80%;">
+    <div id="product-container" class="grid grid-cols-2 gap-5 mt-10 md:grid-cols-4 ">
         <div>
             <img src="./images/bestseller-1.jpg" class="hover:shadow-2xl transform hover:-translate-y-2 inline">
             <h1>Rose Plant</h1>
@@ -73,11 +89,13 @@ https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="styl
             <p>$20</p>
         </div>
     </div>
+    <h1 id="nosuchcontent"></h1>
     </section>
       <footer class="bg-green-100 p-5 mt-10 flex flex-col gap-5 ">
          <h1 class="text-3xl font-bold  ">Greenden</h1>
          <p>The Standar chunk of lorem ipsum used since the 1500's is reprodused below for those interest</p>
          <p>&copy;2021 Greenday.com</p>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>
